@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h2>Student Form</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Student Name</th>
+      <th scope="col">Roll No</th>
+        <th scope="col">college</th>
+        <th scope="col">section</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in student %}
+    <tr>
+        <td scope="row">{{i.name}}</td>
+            <td>{{i.roll_number}}</td>
+            <td>{{i.college}}</td>
+            <td>{{i.subject}}</td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
